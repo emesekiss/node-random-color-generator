@@ -14,17 +14,24 @@ let chalkColor = randomColor({
   luminosity: luminosityTest,
 });
 
-const makeBlockOfHashtag = () => {
-  console.log(chalk.hex(chalkColor)('##############################')),
+if (process.argv[2] === 'ask') {
+  return (
+    console.log('What is your preferred color?'),
+    console.log('What luminosity?')
+  );
+} else {
+  const makeBlockOfHashtag = () => {
     console.log(chalk.hex(chalkColor)('##############################')),
+      console.log(chalk.hex(chalkColor)('##############################')),
+      console.log(chalk.hex(chalkColor)('##############################')),
+      console.log(chalk.hex(chalkColor)('##############################')),
+      console.log(
+        chalk.hex(chalkColor)(`#########   ${randomColor()}   ########`),
+      );
     console.log(chalk.hex(chalkColor)('##############################')),
-    console.log(chalk.hex(chalkColor)('##############################')),
-    console.log(
-      chalk.hex(chalkColor)(`#########   ${randomColor()}   ########`),
-    );
-  console.log(chalk.hex(chalkColor)('##############################')),
-    console.log(chalk.hex(chalkColor)('##############################')),
-    console.log(chalk.hex(chalkColor)('##############################')),
-    console.log(chalk.hex(chalkColor)('##############################'));
-};
-makeBlockOfHashtag();
+      console.log(chalk.hex(chalkColor)('##############################')),
+      console.log(chalk.hex(chalkColor)('##############################')),
+      console.log(chalk.hex(chalkColor)('##############################'));
+  };
+  makeBlockOfHashtag();
+}
